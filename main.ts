@@ -10,7 +10,7 @@
 // /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { cpSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -61,4 +61,12 @@ cpSync(sourcePath, targetPath);
 const before = sha256File(sourcePath);
 const after = sha256File(targetPath);
 if (before !== after) die("meme.png copy failed integrity check");
-console.log(`wrote ${targetPath} sha256:${after}`);
+// The hash already proves the bytes match, but a structural check on the
+// copy names the failure instead of just failing: a truncated copy is
+// "no IEND chunk at the end", not a bare hash mismatch. The size check is
+// a second, independent witness that the whole file arrived.
+const copiedProblem = checkPng(readFileSync(targetPath));
+if (copiedProblem !== null) die(`copied entry.png rejected: ${copiedProblem}`);
+const { size } = statSync(targetPath);
+if (size !== statSync(sourcePath).size) die("meme.png copy failed size check");
+console.log(`wrote ${targetPath} sha256:${after} bytes:${size}`);
