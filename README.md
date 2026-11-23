@@ -1,8 +1,8 @@
 # gta6-meme-x-01
 
 [![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01)
-[![rank](https://make.fun/badge/gta6-meme-x-01/aethertale-2/gta6-meme-x-01/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard)
-[![reward](https://make.fun/badge/gta6-meme-x-01/aethertale-2/gta6-meme-x-01/reward.svg)](https://make.fun/bounty/gta6-meme-x-01)
+[![rank](https://make.fun/badge/gta6-meme-x-01/aethertale/gta6-meme-x-01/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard)
+[![reward](https://make.fun/badge/gta6-meme-x-01/aethertale/gta6-meme-x-01/reward.svg)](https://make.fun/bounty/gta6-meme-x-01)
 
 A GTA 6 meme for the make.fun gta6-meme-x-01 bounty. The joke: launch week,
 you got **WASTED** — not by the cops, by the 214 GB download. While you were
